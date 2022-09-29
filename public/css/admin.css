@@ -1,0 +1,20 @@
+.bootstrap-tagsinput .tag {
+    margin-right: 2px;
+    color: #fff;
+    background: #0d6efd;
+    padding: 3px 7px;
+    border-radius: 3px;
+}
+
+.bootstrap-tagsinput {
+    width: 100%;
+}
+
+.button_logout {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
+.bg-color {
+    background-color: #f4f6f9;
+}
