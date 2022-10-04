@@ -16,11 +16,12 @@ class TagObserver
      */
     public function created(Tag $tag)
     {
-        $url = $_SERVER['APP_URL'];
+
+        $url = route('articles.getArticle', $tag->article_id);
         $articles =  Article::where('id', '!=', $tag->article_id)->get();
 
         foreach ($articles as $article) {
-            $article->text = preg_replace("/\b" . $tag->name . "\b/i", "<a href='$url/articles/$tag->article_id'>$tag->name</a>", $article->text);
+            $article->text = preg_replace("/\b" . $tag->name . "\b/iu", "<a href='$url'>$tag->name</a>", $article->text);
             $article->save();
         }
     }
@@ -35,11 +36,11 @@ class TagObserver
     public function deleted(Tag $tag)
     {
 
-        $url = $_SERVER['APP_URL'];
+        $url = route('articles.getArticle', $tag->article_id);
         $articles =  Article::all();
 
         foreach ($articles as $article) {
-            $article->text = str_replace("<a href='$url/articles/$tag->article_id'>$tag->name</a>", $tag->name, $article->text);
+            $article->text = str_replace("<a href='$url'>$tag->name</a>", $tag->name, $article->text);
             $article->save();
         }
     }

@@ -42,12 +42,12 @@
                 </p>
               </a>
               <ul class="nav nav-treeview">
-                <li class="nav-item">
+                <li class="nav-item menu-item ">
                   <a href="{{ route('admin.articles.index') }}" class="nav-link">
                     <p>Всі статті</p>
                   </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item menu-item ">
                   <a href="{{ route('admin.articles.create') }}" class="nav-link">
                     <p>Створити статтю</p>
                   </a>

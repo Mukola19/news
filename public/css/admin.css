@@ -18,3 +18,9 @@
 .bg-color {
     background-color: #f4f6f9;
 }
+
+/* style for nav */
+.active {
+    background-color: rgba(255,255,255,.1);
+    border-radius: 3px;
+}

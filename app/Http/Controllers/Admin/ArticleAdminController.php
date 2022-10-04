@@ -70,13 +70,13 @@ class ArticleAdminController extends Controller
 
 
 
-        $url = $_SERVER['APP_URL'];
 
         $tagsAll = Tag::all();
 
         // add a link to the text
         foreach ($tagsAll as $tag) {
-            $article->text = preg_replace("/\b" . $tag->name . "\b/i", "<a href='$url/articles/$tag->article_id'>$tag->name</a>", $article->text);
+            $url = route('articles.getArticle', $tag->article_id);
+            $article->text = preg_replace("/\b" . $tag->name . "\b/iu", "<a href='$url'>$tag->name</a>", $article->text);
         }
 
         $article->save();
@@ -154,13 +154,13 @@ class ArticleAdminController extends Controller
         }
 
 
-        $url = $_SERVER['APP_URL'];
 
         $tagsAll = Tag::all();
 
         // add a link to the text
         foreach ($tagsAll as $tag) {
-            $article->text = preg_replace("/\b" . $tag->name . "\b/i", "<a href='$url/articles/$tag->article_id'>$tag->name</a>", $article->text);
+            $url = route('articles.getArticle', $tag->article_id);
+            $article->text = preg_replace("/\b" . $tag->name . "\b/iu", "<a href='$url'>$tag->name</a>", $article->text);
         }
 
 
